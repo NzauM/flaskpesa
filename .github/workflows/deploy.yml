@@ -30,7 +30,7 @@ jobs:
       - name: Merge to Production after Tests Passed
         uses: everlytic/branch-merge@1.1.2
         with: 
-          github_token: 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
+          github_token: ${{github.token}}
           source_ref: ${{github.ref}}
           target_branch: 'production'
           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
