@@ -32,4 +32,4 @@ jobs:
           type: now
           from_branch: master
           target_branch: production
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: "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"
