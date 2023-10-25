@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_mpesa import MpesaAPI
 
 
@@ -13,7 +13,7 @@ app.config["APP_SECRET"] = '9txkkJcjGjQifvYt'
 mpesa = MpesaAPI(app)
 @app.route('/')
 def home():
-    return '<h1>Flask Mpesa! Welcome</h1>'
+    return jsonify({"Message":"Karibu Sana"})
 
 @app.route('/mytranzakshens', methods=['GET','POST'])
 def mpesahome():
