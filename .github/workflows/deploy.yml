@@ -24,3 +24,5 @@ jobs:
           pip install -r requirements.txt
       - name: Test Python
         run: python -m pytest tests/
+      - name: Test Fail First
+        run: echo "Does not fail first"
