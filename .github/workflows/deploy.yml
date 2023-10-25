@@ -25,4 +25,11 @@ jobs:
       - name: Test Python
         run: python -m pytest tests/
       - name: Test Fail First
-        run: echo "Does not fail first"
+        run: echo "Actually Fails after the first exception"
+      - name: Merge to Production after Tests Passed
+        uses: devmasx/merge-branch@master
+        with: 
+          type: now
+          from_branch: master
+          target_branch: production
+          github_token: ${{secrets.GITHUB_TOKEN}}
