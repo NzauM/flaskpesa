@@ -27,9 +27,9 @@ jobs:
       - name: Test Fail First
         run: echo "token"  ${{secrets.GITHUB_TOKEN}}
       - name: Merge to Production after Tests Passed
-        uses: devmasx/merge-branch@master
+        uses: everlytic/branch-merge@1.1.2
         with: 
-          type: now
-          from_branch: master
-          target_branch: production
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{github.token}}
+          source_ref: ${{github.ref}}
+          target_branch: 'production'
+          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
